@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Star Wars Scrolling Text</title>
+    <style>
+      /* Set the background color and font */
+      body {
+        background-color: black;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+      }
+
+      /* Set the styles for the scrolling text */
+      .scroll-text {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+        font-size: 2em;
+        color: yellow;
+        text-shadow: 0 0 10px white;
+        animation: scroll 60s linear infinite;
+      }
+
+      /* Define the animation for scrolling the text */
+      @keyframes scroll {
+        0% {
+          transform: translate(-50%, 100%);
+        }
+        100% {
+          transform: translate(-50%, -50%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Add the scrolling text -->
+    <div class="scroll-text">
+      A long time ago in a galaxy far,<br>
+      far away....
+    </div>
+  </body>
+</html>
