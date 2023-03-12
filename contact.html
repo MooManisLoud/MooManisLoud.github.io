@@ -10,16 +10,79 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <style>
+        .dvd-text {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: inline-block;
+			white-space: nowrap;
+			color: #fff;
+			font-size: 24px;
+			font-weight: bold;
+			text-shadow: 2px 2px 4px #000;
+		}
+
         body {
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			height: 100vh;
-            font-family: "Times New Roman", Times, serif;
+            user-select: none;
 		}
     </style>
 </head>
 <body>
-    <h1>Coming Soon!</h1>
+    <div class="dvd-text">Coming Soon!</div>
+
+    <a href="#" onclick="goBack()"><h1 style="position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+        white-space: nowrap;
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px #000;">Go back</h1></a>
+
+    <script>
+		let angle = 0;
+		let x = 0;
+		let y = 0;
+		let speed = 1; // adjust this value to change the speed of the movement
+
+		function moveText() {
+			let dvdText = document.querySelector(".dvd-text");
+			let centerX = window.innerWidth / 2;
+			let centerY = window.innerHeight / 2;
+			let radius = Math.min(centerX, centerY) * 0.8;
+
+			// calculate new position based on angle and radius
+			x = centerX + radius * Math.cos(angle);
+			y = centerY + radius * Math.sin(angle);
+
+			// set the new position of the text
+			dvdText.style.left = x + "px";
+			dvdText.style.top = y + "px";
+
+			// update the angle for the next frame
+			angle += speed * Math.PI / 180;
+
+			// wrap the angle around if it exceeds 360 degrees
+			if (angle >= 2 * Math.PI) {
+				angle -= 2 * Math.PI;
+			}
+
+			// call this function again on the next animation frame
+			requestAnimationFrame(moveText);
+		}
+
+		moveText(); // start the animation
+
+        function goBack() {
+			window.history.back();
+		}
+	</script>
 </body>
 </html>
