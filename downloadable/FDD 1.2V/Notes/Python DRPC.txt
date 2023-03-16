@@ -1,0 +1,23 @@
+Python in FunkinFD is used for Discord RPC
+
+If you dont want a Discord RPC on you Discord status you can disable it by going into the VBS folder and finding "Discordrpc.py" and going into the code
+
+COPY THIS CODE DOWN BELOW ↓↓↓
+
+
+
+#  from pypresence import Presence
+#  import time
+
+#  client_id = '1079547038007570432'
+#  RPC = Presence(client_id)
+#  RPC.connect()
+#  RPC.update(state="Playing FunkinFD", details="Being Coded and Tested", large_image="biglogo", large_text="FFD 1.2V", small_image="downloading", small_text="Downloading HaxeFlixel files...", start=time.time())
+#  while True:
+#    time.sleep(15)
+
+
+
+In Python, comments are lines of text that are ignored by the interpreter and are used to provide additional information about the code for the human reader. Comments in Python start with the # symbol and continue until the end of the line.
+
+Thats why it is used in the code to stop the code running.

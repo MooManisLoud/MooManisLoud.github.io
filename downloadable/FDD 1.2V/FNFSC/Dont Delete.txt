@@ -1,0 +1,1 @@
+Deleting this folder breaks the installer
